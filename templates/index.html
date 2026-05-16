@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Tracker</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- hero-box -->
+         <div class="badge">
+            Interactive Quiz
+        </div>
+
+        <h1>
+            Welcome to <span>Study Tracker</span>
+        </h1>
+        
+        <p class="subtitle">
+            Improve your math skills and compete with your friends on the leaderboard.
+        </p>
+        
+        <div class="card">
+
+            <div class="warning-text">
+                ⏱ Please do not use calculator!
+            </div>
+
+            <form method="POST">
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Input Your Name"
+                        required
+                    >
+
+                    <button type="submit">
+                        Start Quiz
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    
+        </div>
+
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Page</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="greeting">
+        Welcome back
+    </div>
+
+    <h1>
+        Hello <span>{{ username }}</span>
+    </h1>
+
+    <p class="subtitle">
+        Solve all questions carefully and get the highest score.
+    </p>
+
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <form method="POST" action="/result">
+
+        <input type="hidden"
+                name="username"
+                value="{{ username }}">
+
+        {% for item in questions %}
+
+        <div class="question-card">
+
+            <div class="question-number">
+                Question {{ loop.index }}
+            </div>
+
+            <div class="question-text">
+                {{ item.question }}
+            </div>
+
+            <input 
+                type="text"
+                name="answer{{ loop.index }}"
+                placeholder="Type your answer..."
+                required
+            >
+
+        </div>
+
+        {% endfor %}
+
+        <button type="submit">
+            Submit Quiz
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
